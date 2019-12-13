@@ -21,8 +21,15 @@ class Location(models.Model):
     def __str__(self):
         return self.location_name 
 
+    def save_location(self):
+        self.save()
+
 class Category(models.Model):
     category_name = models.CharField(max_length=80)
+
+    def save_category(self):
+        self.save()
+
 
     def __str__(self):
         return self.category_name 
@@ -42,4 +49,10 @@ class Picture(models.Model):
 
     @classmethod
     def get_one_pic(cls,id):
-        image = 
+        pic = cls.objects.filter(id = id)
+        return pic
+
+    @classmethod
+    def search_by_name(cls,search_term):
+        image = cls.objects.filter(name__icontains=search_term)
+        return image

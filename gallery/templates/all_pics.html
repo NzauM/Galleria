@@ -7,7 +7,10 @@
         <img width="450px" src="{{pic.image.url}}" alt="image">
         
         {{pic.name}}
-        {{pic.description}}
+        {{pic.description}} <br>
+        {{pic.id}}
+        <a class="navbar-brand" href=" /single_pic/{{pic.id}} "> View details </a>
+      
     </div>
     {% endfor %}
 </div>
