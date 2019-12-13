@@ -39,3 +39,7 @@ class Picture(models.Model):
     def all_pics(cls):
         pics = cls.objects.all()
         return pics
+
+    @classmethod
+    def get_one_pic(cls,id):
+        image = 
