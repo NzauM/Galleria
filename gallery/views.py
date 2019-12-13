@@ -7,3 +7,8 @@ from .models import Picture
 def pics(request):
     pics = Picture.all_pics()
     return render(request,'all_pics.html',{"pics":pics})
+
+def single_pic(request,pic_id):
+    pic = Picture.objects.get(id = pic_id)
+    return render(request,"single_pic.html", {'pic':pic})
+

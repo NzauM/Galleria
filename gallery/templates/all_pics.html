@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+{{block.super}}
+<div class="container">
+    {% for pic in pics %}
+    <div class="row">
+        <img width="450px" src="{{pic.image.url}}" alt="image">
+        
+        {{pic.name}}
+        {{pic.description}}
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
