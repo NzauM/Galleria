@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    {% for one_pic in locationpic %}
+    <h1> {{one_pic.name}} </h1>
+    <h2> {{one_pic.description}} </h2>
+    <img width="400px" src=" {{one_pic.image.url}} " alt="one pic image">
+    {% endfor %}
+</div>
+{% endblock %}
