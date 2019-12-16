@@ -2,12 +2,29 @@
 {% block content %}
 <div class="container">
     <div class="row">
-        <img src=" {{pic.image.url}} " alt="img">
-        <h1> {{pic.name}} </h1>
-        <h1> {{pic.description}} </h1>
-        <h1> {{pic.location}} </h1>
-        <h1> {{pic.category}} </h1>
-        <h1> {{pic.author}} </h1>
+            <h1> {{pic.name}} </h1>
+        <img width="450px" src=" {{pic.image.url}} " alt="img">
+        <p> {{pic.description}} </p>
+        <p> {{pic.location}} </p>
+        <p>Category: {{pic.category}} </p>
+        <p>Author: {{pic.author}} </p>
     </div>
 </div>
+<style>
+        body{
+            background-image: url("https://us.123rf.com/450wm/foreverrich/foreverrich1705/foreverrich170500312/78766739-soft-blue-gradient-white-light-background.jpg?ver=6");
+            background-position: center;
+            background-attachment: scroll;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .modal-content{
+            background-image: url("https://us.123rf.com/450wm/foreverrich/foreverrich1705/foreverrich170500312/78766739-soft-blue-gradient-white-light-background.jpg?ver=6");
+            background-position: center;
+            background-attachment: scroll;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        
+    </style>
 {% endblock %}
