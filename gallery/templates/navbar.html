@@ -2,8 +2,9 @@
 <title>My Example</title>
 
 <!-- Bootstrap CSS -->
+{% block super %}
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-
+{% endblock %}
 <nav class="navbar navbar-default">
 <div class="container-fluid">
 
@@ -15,18 +16,13 @@
 <span class="icon-bar"></span>
 <span class="icon-bar"></span>
 </button>
-<a class="navbar-brand" href="#">Your Brand</a>
+<a class="navbar-brand styler" href="/">@Galleria</a>
 </div>
 
 <!-- COLLAPSIBLE NAVBAR -->
 <div class="collapse navbar-collapse" id="alignment-example">
 
 <!-- Links -->
-<ul class="nav navbar-nav">
-<li class="active"><a href="#">Link 1 <span class="sr-only">(current)</span></a></li>
-<li><a href="#">Link 2</a></li>
-<li><a href="#">Link 3</a></li>
-</ul>
 <div class="col-sm-4 col-md-4 navbar-right">
 
         <form class="navbar-form" role="search" action="{% url 'search_results' %}">
@@ -41,8 +37,7 @@
         </form>
       </div>
 
-<!-- Text -->
-<p class="navbar-text navbar-right">Friday, 13 Dec 2019</p>
+
 
 </div>
 
@@ -67,3 +62,20 @@ $(function () {
   $('[data-toggle="popover"]').popover()
 })
 </script>
+<style>
+  .styler{
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 250%;
+    text-decoration: underline;
+    color: white;
+   
+  }
+  nav{
+    background-image: url("https://us.123rf.com/450wm/foreverrich/foreverrich1705/foreverrich170500312/78766739-soft-blue-gradient-white-light-background.jpg?ver=6");
+        /* background-position: center; */
+        background-attachment: scroll;
+        background-size: cover;
+        background-repeat: no-repeat;
+        
+  }
+</style>
