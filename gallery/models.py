@@ -24,12 +24,23 @@ class Location(models.Model):
     def save_location(self):
         self.save()
 
+
+    @classmethod
+    def get_location(cls):
+        locations = cls.objects.all()
+        return locations
+
 class Category(models.Model):
     category_name = models.CharField(max_length=80)
 
     def save_category(self):
         self.save()
+        
+    @classmethod
+    def get_categories(cls):
+        categories = cls.objects.all()
 
+        return categories
 
     def __str__(self):
         return self.category_name 
@@ -41,6 +52,14 @@ class Picture(models.Model):
     location = models.ForeignKey(Location,on_delete = models.CASCADE,)
     category = models.ForeignKey(Category, on_delete = models.CASCADE,)
     author = models.ForeignKey(Author,on_delete = models.CASCADE)
+
+
+    def save_pic(self):
+        self.save()
+
+    def delete_image(self):
+        self.delete()
+
 
     @classmethod
     def all_pics(cls):
@@ -56,3 +75,14 @@ class Picture(models.Model):
     def search_by_name(cls,search_term):
         image = cls.objects.filter(name__icontains=search_term)
         return image
+
+    @classmethod
+    def view_pictures_by_location(cls,location):
+        location_pic = cls.objects.filter(location= location)
+
+        return location_pic
+
+    @classmethod
+    def view_pictures_by_category(cls,category):
+        cat_pic = cls.objects.filter(category = category)
+        return cat_pic
