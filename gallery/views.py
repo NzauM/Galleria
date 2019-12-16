@@ -1,12 +1,14 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse,Http404
-from .models import Picture
+from .models import Picture,Category,Location
 
 
 # Create your views here.
 def pics(request):
+    catpic = Category.get_categories()
     pics = Picture.all_pics()
-    return render(request,'all_pics.html',{"pics":pics })
+    loc_pic = Location.get_location()
+    return render(request,'all_pics.html',{"pics":pics ,"catpic":catpic,"loc_pic":loc_pic})
 
 def single_pic(request,id):
     try:
@@ -26,3 +28,16 @@ def search_results(request):
     else:
         message = "You have not entered anything to search"
         return render(request,'search.html',{"message":message})
+def viewPics_by_location(request,location):
+    locationpic = Picture.view_pictures_by_location(location)
+    return render(request,"location_pics.html",{"locationpic":locationpic})
+
+def viewPics_by_category(request,category):
+    picha =Picture.view_pictures_by_category(category)
+    return render (request,'category.html',{"picha":picha})
+
+# def navbar_categories(request):
+#     categories = get_categories()
+#     locations = get_location()
+
+#     return render(request,'all_pics.html',{"categories" :categories})
