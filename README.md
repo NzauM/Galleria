@@ -1,5 +1,6 @@
 
-@Galleria[https://github.com/NzauM/Galleria.git]
+## @Galleria
+[https://github.com/NzauM/Galleria.git]<br>
 This project was generated with [Python](https://www.python.org/) version 3.6.8 <br>
 ## Author:
 NzauM
