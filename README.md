@@ -30,7 +30,7 @@ source virtual/bin/activate
 * You'll need to create a new postgress database, Type the following command to access postgress
 
  *$ psql
-Then run the following query to create a new database named gallery
+  * Then run the following query to create a new database named gallery
 
 # 4.create database Galleria
 # 5.Install dependencies
