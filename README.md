@@ -32,19 +32,19 @@ source virtual/bin/activate
  *$ psql
 Then run the following query to create a new database named gallery
 
-# create database picsgarage
-# 4.Install dependencies
+# 4.create database Galleria
+# 5.Install dependencies
 * To install the requirements from requirements.txt file,
 
   * pip install -r requirements.txt
-# 5.Create Database migrations
+# 6.Create Database migrations
 * Making migrations on postgres using django
 
 * python3 manage.py makemigrations garage
 * then run the command below;
 
 * python3 manage.py migrate
-# 6.Run the app
+# 7.Run the app
 * To run the application on your development machine,
 
 * python3 manage.py runserver
